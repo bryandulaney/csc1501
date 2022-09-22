@@ -1,0 +1,237 @@
+#Bryan Dulaney
+##CSC150
+#Lab Assignment 3
+
+##WORK TICKET 1 -- STRING FORMATTING
+#TASK 1: Print a string that uses double quotation marks inside the string.
+def double_quotes():
+    wt = "########    WORK TICKET 1    ########\n\n"
+    t_1 = """TASK 1:Print a string that uses double quotation marks inside
+    the string.\n\n"""
+    s = '" "\n'
+    print(wt,t_1,s)
+
+#TASK 2: Print a string that uses an apostrophe inside the string.
+
+def apostrophe():
+    t_2 = """TASK 2:Print a string that uses and apostrophe inside the string.
+    \n"""
+    s = " ' \n"
+    print(t_2,s)
+
+#TASK 3: Print a string that spans multiple lines with whitespace preserved.
+
+def multi_line():
+    t_3 = """TASK 3: Print a string that spans multiple lines with whitespace
+    preserved.\n\n"""
+    s = """a        string
+                                    that
+
+                        spans
+
+
+                                            multiple
+
+
+            lines
+
+
+                            with
+
+                                    whitespace
+
+
+                preserved.\n"""
+    print(t_3,s)
+
+#TASK 4: Print a string that is coded on multiple lines but gets printed
+##      on a single line.
+
+def single_line():
+    t_4 = """TASK 4: Print a string that is coded on multiple lines but
+    gets printed on a single line.\n\n"""
+    s_1 = "a string that is coded "
+    s_2 = "on multiple lines "
+    s_3 = "but gets printed on a single line.\n"
+    print(t_4,s_1,s_2,s_3)
+
+##WORK TICKET 2 -- STRING FUNCTIONS
+#TASK 1: Create a string and print its length using len().
+
+def string_length():
+    wt = "########    WORK TICKET 2    ########\n\n"
+    t_1 = "TASK 1:Create a string and print its lenght using len().\n\n"
+    l_1 = "STRING: "
+    l_2 = "STRING LENGTH: "
+    s = "create a string and print its length using len().\n"
+    sl = len(s)
+    print(wt,t_1,l_1,s,l_2,sl)
+
+#TASK 2: Create two strings, concatenate them, and print the resulting string.
+
+def concat_string():
+    t_2 = """\nTASK 2: Create two strings, concatenate them, and print the
+    resulting string.\n\n"""
+    s_1 = "create two strings, concatenate them, "
+    s_2 = "and print the resulting string.\n"
+    s = s_1 + s_2
+    print(t_2,s)
+
+#TASK 3: Create two strings, use concatenation to add a space between them,
+##      and print the result.
+
+def add_space():
+    t_3 = """TASK 3: Create two strings, use concatenation to add a space
+    between them, and print the result.\n\n"""
+    s_1 = "aSTRINGwithNOspaces."
+    s_2 = "anotherSTRINGwithNOspaces.\n"
+    print(t_3,s_1 + " " + s_2)
+
+#TASK 4: Print the string "zing" by using slice notation to specify the
+##      correct range of characters in the string "bazinga".
+
+def bazinga():
+    t_4 = '''TASK 4: Print the string "zing" by using slice notation to
+    specify the correct range of charactes in the string "bazinga".\n\n'''
+    s = "bazinga"
+    print(t_4,s[2:6])
+
+##WORK TICKET 3 -- STRING METHODS
+#TASK 1: Write a program that converts strings to lowercase:
+
+def lower_case():
+    wt = "\n########    WORK TICKET 3    ########\n\n"
+    t_1 = "TASK 1:Write a program that converts strings to lowercase.\n"
+    print(wt,t_1)
+    
+    s_list = ["Animals","Badger","Honey Bee","Honey Badger"]
+    
+    for s in s_list:
+        print(s.lower(),"\n")
+
+#TASK 2: Write a program that converts strings to uppercase.
+
+def upper_case():
+    t_2 = "TASK 2: Write a program that converts strings to uppercae.\n"
+    print(t_2)
+    
+    s_list = ["Animals","Badger","Honey Bee","Honey Badger"]
+    
+    for s in s_list:
+        print(s.upper(),"\n")
+
+#TASK 3: Write a program that removes whitespace from the following strings,
+##      then print out the strings with the whitespace removed.
+
+def white_out():
+    t_3 = """TASK 3:Write a program that removes whitespace from the following
+    strings, then print out the strings with the whitespace removed.\n\n"""
+    print(t_3)
+    
+    s_list = [" Filet Mignon", "Brisket ", " Cheeseburger "]
+
+    for s in s_list:
+        print(s.strip(), "\n")
+
+#TASK 4: Write a program that prints out the results of .startswith("be")
+##      on each of the following strings.
+
+def start_with_be():
+    t_4 = """TASK 4:Write a program that prints out the results of
+    startswith("be") on each of the followring strings.\n\n"""
+    print(t_4)
+
+    s_list = ["Becomes","becomes","BEAR"," bEautiful"]
+
+    for s in s_list:
+        swb = s.startswith("be")
+        print(s,": STARTS WITH 'be'-- ",swb)
+
+##WORK TICKET 4 -- INPUT METHODS
+#TASK 1: Create a string containing an integer, then convert that string
+##      into an actual integer object using int(). Test that your new object
+##      is a number by multiplying it by another number and displaying the
+##      result.
+
+def string_to_int():
+    wt = "\n########    WORK TICKET 4    ########\n\n"
+    t_1 = """TASK 1:Create a string containing an integer, then convert that
+    string into an actual integer object using int(). Test that your new object
+    is a number by multiplying it by another number and displaying the
+    result.\n\n"""
+    s_1 = "3"
+    s_2 = "4"
+    s = s_1 + " * " + s_2 + " = "
+    i_1 = int(s_1)
+    i_2 = int(s_2)
+    q = i_1 * i_2
+    print(wt,t_1,s,q)
+   
+#TASK 2: Repeat the previous exercise, but use a floating-point number and
+##      float().
+
+def string_to_float():
+    t_2 = """\nTASK 2:Repeat the previous excercise, but use a floating-point
+    number and float().\n\n"""
+    s_1 = "3.14579867984321"
+    s_2 = "4.44"
+    s = s_1 + " * " + s_2 + " = "
+    i_1 = float(s_1)
+    i_2 = float(s_2)
+    p = i_1 * i_2
+    print(t_2,s,p,"\n")
+
+#TASK 3: Create a string object and an integer object, then display them
+##      side by side with a single print statement using str().
+
+def int_to_string():
+    t_3 = """TASK 3:Create a string object and an integer object, then display
+    them side by side with a single print statement using str().\n\n"""
+    s = "a string. "
+    i = 3
+    print(t_3,s + str(i),"\n")
+
+#TASK 4: Write a program that uses input() twice to get two numbers from
+##      the user, multiplies the numbers together, and displays the result.
+
+def math_usr():
+    t_4 = """TASK 4:Write a program that uses input() twice to get two numbers
+    from the user, multiplies the numbers together, and displays the result.\n
+    """
+    print(t_4)
+    
+    a = int(input("enter a number: "))
+    b = int(input("enter another number: "))
+    p = a * b
+    s_a = str(a)
+    s_b = str(b)
+    s = "The product of " + s_a + " and " + s_b + " is: "
+    print(s,p,"\n")
+
+#TASK 5: Use the .find() string method.
+
+def find_first_a():
+    t_5 = "TASK 5:Use the .find() string method.\n\n"
+    s = "yeoqajlfhbdalkjflajdflajfljdanl"
+    first_a = s.find("a")
+    print(t_5,"The first 'a' in the string is found at index:",first_a)
+    
+    
+
+double_quotes()
+apostrophe()
+multi_line()
+single_line()
+string_length()
+concat_string()
+add_space()
+bazinga()
+lower_case()
+upper_case()
+white_out()
+start_with_be()
+string_to_int()
+string_to_float()
+int_to_string()
+math_usr()
+find_first_a()
