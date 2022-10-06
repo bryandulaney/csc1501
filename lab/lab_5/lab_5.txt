@@ -1,0 +1,249 @@
+##CSC1500
+#BRYAN DULANEY
+##LAB_4
+
+##WORK TICKET 1
+#TASK: Customer needs a program written in Python that takes user input
+#   and produces desired output.
+import math, random
+
+def usr_in():
+    wt = "########    WORK TICKET 1    ########\n"
+    t = """TASK:Customer needs a program written in Python that takes
+    user input and returns desired output.\n"""
+
+    print(wt,t)
+    
+    str_in = str(input("Please enter a string:"))
+    d_type = type(str_in)
+    str_out = "You entered " + str_in + " and its type is " + str(d_type)
+
+    print(str_out,"\n")
+    
+    int_in = int(input("Please enter an integer:"))
+    d_type = type(int_in)
+    str_out = "You entered " + str(int_in) + " and its type is " + str(d_type)
+
+    print(str_out, "\n")
+
+
+##WORK TICKET 2
+#TASK: Write Python program that prints a string in the desired format.
+
+def print_poem():
+    wt = "########    WORK TICKET 2   ########\n"
+    t = """TASK:Customer needs a program written in Python that takes
+    user input and returns desired output.\n"""
+
+    print(wt,t)
+
+    poem = """Twinkle, twinkle, little star,
+                    How I wonder what you are!
+                            Up above the world so high,
+
+                            Like a diamond in the sky.
+                Twinkle, twinkle, little star.
+                        How I wonder what you are\n"""
+
+    print(poem)
+
+
+##WORK TICKET 3
+#TASK: Write Python program that accepts the radius of a circle from
+#       the user and compute the area.
+
+def circle_area():
+    wt = "########    WORK TICKET 3   ########\n"
+    t = """TASK:Write Python program that accepts the radius of a
+        circle from the user and compute the area.\n"""
+
+    print(wt,t)
+
+    pi = math.pi
+    radius = float(input("Please enter circle radius:"))
+    area = pi * (radius**2)
+    r_out = "\n" + "r = " + str(radius) + "\n"
+    a_out = "area = " + str(area) + "\n"
+
+    print(r_out,a_out)
+    
+
+##WORK TICKET 4
+#TASK: Write Python program to test whether an inputted letter is a
+#       vowel or not.
+
+def vowel_test():
+    wt = "########    WORK TICKET 4   ########\n"
+    t = """TASK:Write Python program to test whether an inputted letter
+        is a vowel or not.\n"""
+
+    print(wt,t)
+
+    usr_in = str(input("enter a letter 'aA -zZ':"))
+    v_list = ["a","e","i","o","u","y"]
+    i = 1
+
+    while i in range(3):
+        if usr_in in v_list:
+            print('"'+ usr_in + '"'," is a vowel.\n" )
+        else:
+            print('"' + usr_in + '"', " is NOT a vowel.\n")
+        usr_in = str(input("enter a letter 'aA -zZ':"))
+        i = i + 1
+
+##WORK TICKET 5
+#TASK: Use 'list comprehension to produce the desired output.
+
+def list_comp():
+    wt = "########    WORK TICKET 5   ########\n"
+    t = """TASK:Use 'list comprehension to produce the desired
+        output.\n"""
+
+    print(wt,t)
+
+    b_val_list = []
+
+    for i in range(20):
+        b_val_list.append(i**4)
+        
+    print(b_val_list,"\n")
+
+
+##WORK TICKET 6
+#TASK: Print a log of user randomly selected roulette slots.
+
+def roulette():
+    wt = "########    WORK TICKET 6   ########\n"
+    t = """TASK:Print a log of user randomly selected roulette slots.\n"""
+
+    print(wt,t)
+
+    bet = "#"
+    color = "#"
+    colors = ["RED: ","BLACK: ","GREEN: "]
+    even = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36]
+    odd = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35]
+    zero = [0,"00"]
+    bet_log = []
+    opt_in = "y"
+
+    while opt_in != "n":
+        print("place your bets!\n")
+        spin = random.randint(1,3)
+
+        if spin == 1:
+            for i in range(len(even)):
+                num = random.randint(0,(len(even) -1))
+                
+                if num >= 1 and num <= 10 or num >= 19 and num <= 28:
+                    color = colors[1]
+                    bet = color + str(even[num])
+                    bet_log.append(bet)
+                    
+                    print("bet " + bet + " logged.\n")
+                    
+                    opt_in = str(input("bet again? [input 'y/n']:")).lower()
+                    
+                    if opt_in == "n":
+                        break
+                else:
+                    color = colors[0]
+                    bet = color + str(even[num])
+                    bet_log.append(bet)
+                    
+                    print("bet " + bet + " logged.\n")
+
+                    opt_in = str(input("bet again? [input 'y/n']:")).lower()
+                    
+                    if opt_in == "n":
+                        break
+                    
+        elif spin == 2:
+            for i in range(len(odd)):
+                num = random.randint(0,(len(odd) -1))
+
+                if num >= 1 and num <= 10 or num >= 19 and num <= 28:
+                    color = colors[0]
+                    bet = color + str(odd[num])
+                    bet_log.append(bet)
+
+                    print("bet " + bet + " logged.\n")
+
+                    opt_in = str(input("bet again? [input 'y/n']:")).lower()
+                    
+                    if opt_in == "n":
+                        break
+                else:
+                    color = colors[1]
+                    bet = color + str(odd[num])
+                    bet_log.append(bet)
+
+                    print("bet " + bet + " logged.\n")
+
+                    opt_in = str(input("bet again? [input 'y/n']:")).lower()
+                    
+                    if opt_in == "n":
+                        break
+                    
+        else:
+            for i in range(len(zero)):
+                num = random.randint(0,(len(zero)-1))
+                color = colors[2]
+                bet = color + str(zero[num])
+                bet_log.append(bet)
+
+                print("bet " + bet + " logged.\n")
+
+                opt_in = str(input("bet again? [input 'y/n']:")).lower()
+                
+                if opt_in == "n":
+                        break
+
+    print("\nYOUR BET LOG:\n",bet_log,"\n")
+
+
+##WORK TICKET 7
+#TASK:Make a list of dinner guest.
+
+def dinner_party():
+    wt = "########    WORK TICKET 7   ########\n"
+    t = """TASK:Make a list of dinner guest.\n"""
+
+    print(wt,t)
+    
+    guest_name = "#"
+    dinner_date = "#"
+    name_tag = "#"
+    tag_size = "#"
+    dinner_guests = []
+    invite_date = []
+    id_tag = ["small","LARGE"]
+
+    while guest_name != "DONE":
+        guest_name = str(input("Enter guest name [first,last]. Type 'DONE' to exit:"))
+
+        if guest_name == "DONE":
+            break
+        
+        dinner_date = str(input("\nEnter dinner date [month,day]:"))
+        dinner_guests.append(guest_name)    
+        invite_date.append(dinner_date)
+
+    for i in range(len(dinner_guests)):
+        tag_size = random.randint(0,len(id_tag)-1)
+        name_tag = "NAME: "+dinner_guests[i]+" DATE: "+invite_date[i]+" TAG: "+id_tag[tag_size]+"\n"
+        print(name_tag)
+        
+    
+    
+                
+                    
+                    
+
+usr_in()
+print_poem()
+circle_area()
+vowel_test()
+list_comp()
+roulette()
+dinner_party()
